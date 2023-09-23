@@ -25,22 +25,22 @@ export async function POST(req: Request, res: NextApiResponse<Data>) {
 
   let response = ''
 
-  await fetch(`${process.env.JURIX_AI_URL}/api/jurix/chat`,{
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      prompt,
-      chatId,
-      session,
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    response = data.message!
-  })
-  .catch(err => console.log("We got an error: ", err));
+  // await fetch(`${process.env.JURIX_AI_URL}/api/jurix/chat`,{
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json"
+  //   },
+  //   body: JSON.stringify({
+  //     prompt,
+  //     chatId,
+  //     session,
+  //   })
+  // })
+  // .then(res => res.json())
+  // .then(data => {
+  //   response = data.message!
+  // })
+  // .catch(err => console.log("We got an error: ", err));
 
   console.log('response: ',response)
 
@@ -61,5 +61,5 @@ export async function POST(req: Request, res: NextApiResponse<Data>) {
   .collection('messages')
   .add(message);
 
-  return NextResponse.json({ answer: message }, { status: 200 });
+  return NextResponse.json({ answer: message });
 }
