@@ -5,6 +5,14 @@
 /.pnp
 .pnp.js
 
+# jurix server files
+iist.py
+jurix/
+.env
+__pycache__
+constitution.pdf
+docs/
+
 # testing
 /coverage
 
